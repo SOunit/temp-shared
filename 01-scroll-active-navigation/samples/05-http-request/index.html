@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body ng-app="app" ng-controller="appController" ng-init="init()">
+    <!-- http request / angular sample -->
+    <nav class="nav">
+      <ul>
+        <li ng-repeat="menuItem in menuItems">{{menuItem.name}}</li>
+      </ul>
+    </nav>
+
+    <!-- angular js lib -->
+    <script src="https://code.angularjs.org/1.8.2/angular.js"></script>
+    <script src="https://code.angularjs.org/1.8.2/angular-animate.js"></script>
+
+    <!-- controller -->
+    <script src="./app.controller.js"></script>
+  </body>
+</html>
