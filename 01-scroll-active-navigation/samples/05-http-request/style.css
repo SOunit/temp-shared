@@ -2,6 +2,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: pink;
+  box-sizing: border-box;
+  border: 3px solid green;
 }
 .nav ul {
   border: 3px solid red;
@@ -17,7 +19,18 @@ body {
   padding-right: 30px;
   min-width: 100px;
 }
-.swiper {
-  width: 600px;
-  height: 300px;
+.menu-item-list-wrapper {
+  border: 3px solid orange;
+}
+.box {
+  padding: 20px;
+  border: 3px solid blue;
+  width: 100px;
+}
+.product-list {
+  justify-content: space-between;
+  border: 3px solid red;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
 }

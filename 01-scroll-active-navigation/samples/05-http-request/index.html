@@ -16,6 +16,19 @@
       </ul>
     </nav>
 
+    <!-- menu items -->
+    <div class="menu-item-list">
+      <div ng-repeat="menuItem in menuItems">
+        <h1>{{menuItem.name}}</h1>
+        <!-- product list -->
+        <div class="product-list">
+          <div ng-repeat="product in menuItem.products" class="box">
+            <p>{{product.id}}. {{product.name}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- angular js lib -->
     <script src="https://code.angularjs.org/1.8.2/angular.js"></script>
     <script src="https://code.angularjs.org/1.8.2/angular-animate.js"></script>
