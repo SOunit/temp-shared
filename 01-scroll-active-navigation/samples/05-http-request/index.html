@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
 
-    <!-- style -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body ng-app="app" ng-controller="appController" ng-init="init()">
-    <!-- http request / angular sample -->
-    <nav class="nav">
-      <ul>
-        <li ng-repeat="menuItem in menuItems">{{menuItem.name}}</li>
-      </ul>
-    </nav>
+		<!-- style -->
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body ng-app="app" ng-controller="appController" ng-init="init()">
+		<!-- http request / angular sample -->
+		<nav class="nav">
+			<ul class="slick-slider">
+				<li ng-repeat="menuItem in menuItems">
+					<a href="#menuItem{{ menuItem.id }}">{{menuItem.name}}</a>
+				</li>
+			</ul>
+		</nav>
 
-    <!-- menu items -->
-    <div class="menu-item-list">
-      <div ng-repeat="menuItem in menuItems">
-        <h1>{{menuItem.name}}</h1>
-        <!-- product list -->
-        <div class="product-list">
-          <div ng-repeat="product in menuItem.products" class="box">
-            <p>{{product.id}}. {{product.name}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+		<!-- menu items -->
+		<div class="menu-item-list">
+			<div ng-repeat="menuItem in menuItems">
+				<h1 id="menuItem{{ menuItem.id }}">{{menuItem.name}}</h1>
+				<!-- product list -->
+				<div class="product-list">
+					<div ng-repeat="product in menuItem.products" class="box">
+						<p>{{product.id}}. {{product.name}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <!-- angular js lib -->
-    <script src="https://code.angularjs.org/1.8.2/angular.js"></script>
-    <script src="https://code.angularjs.org/1.8.2/angular-animate.js"></script>
+		<!-- angular js lib -->
+		<script src="https://code.angularjs.org/1.8.2/angular.js"></script>
+		<script src="https://code.angularjs.org/1.8.2/angular-animate.js"></script>
 
-    <!-- controller -->
-    <script src="./app.controller.js"></script>
-  </body>
+		<!-- slick script -->
+		<script
+			type="text/javascript"
+			src="//code.jquery.com/jquery-1.11.0.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+		></script>
+
+		<!-- controller -->
+		<script src="./app.controller.js"></script>
+	</body>
 </html>
