@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.nav ul {
+  border: 3px solid red;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  overflow-x: scroll;
+}
+.nav ul li {
+  border: 3px solid blue;
+  padding-left: 30px;
+  padding-right: 30px;
+  min-width: 100px;
+}
+.swiper {
+  width: 600px;
+  height: 300px;
+}

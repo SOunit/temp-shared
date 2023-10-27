@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- swiper for navigation -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
+    <!-- style -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- swiper sample -->
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <span class="swiper-slide dev-border-2-orange">Slide 1</span>
+        <span class="swiper-slide dev-border-2-orange">Slide 2 Slide 2</span>
+        <span class="swiper-slide dev-border-2-orange"
+          >Slide 3 Slide 3 Slide 3</span
+        >
+        <span class="swiper-slide dev-border-2-orange"
+          >Slide 4 Slide 4 Slide 4 Slide 4</span
+        >
+        <span class="swiper-slide dev-border-2-orange"
+          >Slide 5 Slide 5 Slide 5 Slide 5 Slide 5</span
+        >
+        <span class="swiper-slide dev-border-2-orange"
+          >Slide 6 Slide 6 Slide 6 Slide 6 Slide 6 Slide 6</span
+        >
+        <span class="swiper-slide dev-border-2-orange"
+          >Slide 7 Slide 7 Slide 7 Slide 7 Slide 7 Slide 7 Slide 7</span
+        >
+        <span class="swiper-slide dev-border-2-orange"
+          >Slide 8 Slide 8 Slide 8 Slide 8 Slide 8 Slide 8 Slide 8 Slide 8</span
+        >
+        <span class="swiper-slide dev-border-2-orange"
+          >Slide 9 Slide 9 Slide 9 Slide 9 Slide 9 Slide 9 Slide 9 Slide 9 Slide
+          9</span
+        >
+      </div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- swiper for navigation -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- swiper script -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const swiper = new Swiper(".swiper", {
+            // Optional parameters
+            direction: "horizontal",
+            loop: true,
+            slidesPerView: "auto", // Number of slides to show
+            spaceBetween: 15, // Space between slides
+
+            // Navigation arrows
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        };
+      })();
+    </script>
+  </body>
+</html>
