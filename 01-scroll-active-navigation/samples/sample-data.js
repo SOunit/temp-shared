@@ -3,7 +3,7 @@ var product = {
   name: "product name",
 };
 
-var category = {
+var categories = {
   name: "category name",
   products: [
     product,

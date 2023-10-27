@@ -1,0 +1,342 @@
+[
+  {
+    "name": "category name 1",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 2",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 3",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 4",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 5",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 6",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 7",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 8",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 9",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 10",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 11",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 12",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 13",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 14",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 15",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 16",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  },
+  {
+    "name": "category name 17",
+    "products": [
+      {
+        "name": "product name 1"
+      },
+      {
+        "name": "product name 2"
+      },
+      {
+        "name": "product name 3"
+      },
+      {
+        "name": "product name 4"
+      },
+      {
+        "name": "product name 5"
+      }
+    ]
+  }
+]
