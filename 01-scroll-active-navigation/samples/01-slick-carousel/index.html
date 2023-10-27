@@ -86,20 +86,34 @@
             const slider = $(".slick-slider");
 
             // Iterate through the data and create a slide for each item
-            data.forEach(function (item) {
+            data.forEach(function (item, index) {
               const slide = `<div class="slide dev-border-3-yellow">
-                <p>${item.title}</p>
+                <p>${index}.${item.title}</p>
             </div>`;
               slider.append(slide);
             });
 
+            var noInfiniteButStartFrom0 = {
+              infinite: false,
+              centerMode: false,
+              initialSlide: 0,
+            };
+
+            var infiniteButNotStartFrom0 = {
+              infinite: true,
+              centerMode: false,
+              initialSlide: 0,
+            };
+
             // Initialize the Slick slider
             slider.slick({
               dots: false,
-              infinite: true,
+              // ...noInfiniteButStartFrom0,
+              ...infiniteButNotStartFrom0,
               speed: 300,
+
+              // これを-1とか0にするとブラウザが落ちる
               slidesToShow: 1,
-              centerMode: true,
               variableWidth: true,
               arrows: true,
               prevArrow:
