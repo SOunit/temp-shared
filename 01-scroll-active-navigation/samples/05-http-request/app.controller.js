@@ -46,6 +46,9 @@
 				dots: true,
 				infinite: true,
 
+				// center
+				// centerMode: true,
+
 				// add this when item size is changed
 				variableWidth: true,
 
