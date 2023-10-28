@@ -11,11 +11,12 @@
 			var url = "./data.json";
 			var res = await $http({ url });
 
-			console.log("init $http", { res });
-
 			var dbCategories = res.data;
 
 			$scope.menuItems = dbCategories;
+
+			// render http request result
+			$scope.$applyAsync();
 		};
 	}
 })();
