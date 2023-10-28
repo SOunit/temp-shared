@@ -8,10 +8,11 @@ html {
 }
 
 .slide {
-  padding: 10px 20px;
   background-color: green;
 }
 .slide a {
+  display: inline-block;
+  padding: 10px 20px;
   text-decoration: none;
   color: #333;
 }
