@@ -1,135 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
 
-    <!-- slick styles -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-    />
+		<!-- slick styles -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+		/>
 
-    <!-- font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
+		<!-- font awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		/>
 
-    <!-- style sheet -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- slider menu -->
-    <div class="dev-border-2-orange menu-container hidden">
-      <div class="slick-slider dev-border-1-red">
-        <!-- <div class="dev-border-3-yellow menu-item">
+		<!-- style sheet -->
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- slider menu -->
+		<div class="dev-border-2-orange menu-container hidden">
+			<div class="slick-slider dev-border-1-red">
+				<!-- <div class="dev-border-3-yellow menu-item">
           your content1 your content1 your content1
         </div>
         <div class="dev-border-3-yellow menu-item">your content2</div> -->
-        <!-- <div class="dev-border-3-yellow">your content3</div>
+				<!-- <div class="dev-border-3-yellow">your content3</div>
         <div class="dev-border-3-yellow">your content4</div>
         <div class="dev-border-3-yellow">your content5</div> -->
-      </div>
-    </div>
+			</div>
+		</div>
 
-    <section class="sample-section sample-section--first dev-border-3-yellow">
-      <div>TEST SECTION 1</div>
-    </section>
+		<section class="sample-section sample-section--first dev-border-3-yellow">
+			<div>TEST SECTION 1</div>
+		</section>
 
-    <section class="sample-section dev-border-3-yellow">
-      <div>TEST SECTION 2</div>
-    </section>
+		<section class="sample-section dev-border-3-yellow">
+			<div>TEST SECTION 2</div>
+		</section>
 
-    <section class="sample-section dev-border-3-yellow">
-      <div>TEST SECTION 3</div>
-    </section>
+		<section class="sample-section dev-border-3-yellow">
+			<div>TEST SECTION 3</div>
+		</section>
 
-    <section class="sample-section dev-border-3-yellow">
-      <div>TEST SECTION 4</div>
-    </section>
+		<section class="sample-section dev-border-3-yellow">
+			<div>TEST SECTION 4</div>
+		</section>
 
-    <section class="sample-section dev-border-3-yellow">
-      <div>TEST SECTION 5</div>
-    </section>
+		<section class="sample-section dev-border-3-yellow">
+			<div>TEST SECTION 5</div>
+		</section>
 
-    <!-- slick script -->
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-1.11.0.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-    ></script>
+		<!-- slick script -->
+		<script
+			type="text/javascript"
+			src="//code.jquery.com/jquery-1.11.0.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+		></script>
 
-    <script>
-      (function () {
-        $(document).ready(function () {
-          // Define the API endpoint for JSONPlaceholder
-          const apiUrl = "https://jsonplaceholder.typicode.com/posts";
+		<script>
+			(function () {
+				$(document).ready(function () {
+					// Define the API endpoint for JSONPlaceholder
+					const apiUrl = "https://jsonplaceholder.typicode.com/posts";
 
-          // Fetch data from the API
-          $.get(apiUrl, function (data) {
-            // Create an empty container for the slides
-            const slider = $(".slick-slider");
+					// Fetch data from the API
+					$.get(apiUrl, function (data) {
+						// Create an empty container for the slides
+						const slider = $(".slick-slider");
 
-            // Iterate through the data and create a slide for each item
-            data.forEach(function (item, index) {
-              const slide = `<div class="slide dev-border-3-yellow">
+						// Iterate through the data and create a slide for each item
+						data.forEach(function (item, index) {
+							const slide = `<div class="slide dev-border-3-yellow">
                 <p>${index}.${item.title}</p>
             </div>`;
-              slider.append(slide);
-            });
+							slider.append(slide);
+						});
 
-            var noInfiniteButStartFrom0 = {
-              infinite: false,
-              centerMode: false,
-              initialSlide: 0,
-            };
+						var noInfiniteButStartFrom0 = {
+							infinite: false,
+							centerMode: false,
+							initialSlide: 0,
+						};
 
-            var infiniteButNotStartFrom0 = {
-              infinite: true,
-              centerMode: false,
-              initialSlide: 0,
-            };
+						var infiniteButNotStartFrom0 = {
+							infinite: true,
+							centerMode: false,
+							initialSlide: 0,
+						};
 
-            // Initialize the Slick slider
-            slider.slick({
-              // for click
-              // slickGoTo, https://kenwheeler.github.io/slick/
-              dots: true,
-              // ...noInfiniteButStartFrom0,
-              ...infiniteButNotStartFrom0,
-              speed: 300,
+						// Initialize the Slick slider
+						slider.slick({
+							// for click
+							// slickGoTo, https://kenwheeler.github.io/slick/
+							dots: true,
+							// ...noInfiniteButStartFrom0,
+							...infiniteButNotStartFrom0,
+							speed: 300,
 
-              // これを-1とか0にするとブラウザが落ちる
-              slidesToShow: 1,
-              variableWidth: true,
-              arrows: true,
-              prevArrow:
-                '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>', // Use Font Awesome for the previous arrow
-              nextArrow:
-                '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>', // Use Font Awesome for the next arrow
-            });
+							// これを-1とか0にするとブラウザが落ちる
+							slidesToShow: 1,
+							variableWidth: true,
+							arrows: true,
+							prevArrow:
+								'<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>', // Use Font Awesome for the previous arrow
+							nextArrow:
+								'<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>', // Use Font Awesome for the next arrow
+						});
 
-            // to avoid show menu broken style before controlled by slick
-            var menuContainer = document.querySelector(".hidden");
-            menuContainer.classList.remove("hidden");
-          });
-        });
-      })();
-    </script>
-  </body>
+						// to avoid show menu broken style before controlled by slick
+						var menuContainer = document.querySelector(".hidden");
+						menuContainer.classList.remove("hidden");
+					});
+				});
+			})();
+		</script>
+	</body>
 </html>

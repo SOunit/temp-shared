@@ -17,6 +17,36 @@
 
 			// render http request result
 			$scope.$applyAsync();
+
+			$scope.activateSlider(dbCategories);
+		};
+
+		$scope.activateSlider = function (menuItems) {
+			console.log("$scope.activateSlider");
+
+			// fetch target tag
+			var slider = $(".slick-slider");
+			console.log({ slider, menuItems });
+
+			// append child
+			menuItems.forEach((menuItem) => {
+				var slide = `<li class="slide">
+					<a href="#menuItem${menuItem.id}">${menuItem.name}</a>
+				</li>`;
+
+				slider.append(slide);
+			});
+
+			// render slider
+			$(slider).slick({
+				dots: true,
+				infinite: true,
+				speed: 300,
+				prevArrow:
+					'<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+				nextArrow:
+					'<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+			});
 		};
 	}
 })();

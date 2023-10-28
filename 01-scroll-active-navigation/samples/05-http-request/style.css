@@ -20,32 +20,6 @@ body {
     width: 100%;
   }
 }
-.nav {
-  position: sticky;
-  top: 0;
-}
-.nav ul {
-  border: 3px solid red;
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  overflow-x: scroll;
-}
-.nav ul li {
-  border: 3px solid blue;
-  padding-left: 30px;
-  padding-right: 30px;
-  min-width: 100px;
-}
-.menu-item-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.menu-item-list-wrapper {
-  border: 3px solid orange;
-}
 .box {
   padding: 20px;
   border: 3px solid blue;
@@ -60,20 +34,34 @@ body {
   width: 100%;
   flex-wrap: wrap;
 }
-.slide {
-  max-width: 100px;
+.dev-border-1-red,
+.dev-border-2-orange,
+.dev-border-3-yellow,
+.dev-border-4-green,
+.dev-border-5-blue,
+.dev-border-6-pink,
+.dev-border-7-purple,
+.dev-border-8-brown {
+  border: 3px solid red;
 }
-.slick-list {
-  overflow-x: scroll;
+.dev-border-2-orange {
+  border-color: orange;
 }
-.slick-slide {
-  border: 3px solid blue;
+.dev-border-3-yellow {
+  border-color: yellow;
 }
-.slick-track {
-  display: flex;
-  width: 100% !important;
+.dev-border-4-green {
+  border-color: green;
 }
-.slick-prev::before,
-.slick-next::before {
-  content: none;
+.dev-border-5-blue {
+  border-color: blue;
+}
+.dev-border-6-pink {
+  border-color: pink;
+}
+.dev-border-7-purple {
+  border-color: purple;
+}
+.dev-border-8-brown {
+  border-color: brown;
 }

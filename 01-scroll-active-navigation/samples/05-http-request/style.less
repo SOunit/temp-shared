@@ -23,33 +23,33 @@ body {
 	}
 }
 
-.nav {
-	position: sticky;
-	top: 0;
-	ul {
-		border: 3px solid red;
-		list-style: none;
-		display: flex;
-		margin: 0;
-		padding: 0;
-		overflow-x: scroll;
-		li {
-			border: 3px solid blue;
-			padding-left: 30px;
-			padding-right: 30px;
-			min-width: 100px;
-		}
-	}
-}
+// .nav {
+// 	position: sticky;
+// 	top: 0;
+// 	ul {
+// 		border: 3px solid red;
+// 		list-style: none;
+// 		display: flex;
+// 		margin: 0;
+// 		padding: 0;
+// 		overflow-x: scroll;
+// 		li {
+// 			border: 3px solid blue;
+// 			padding-left: 30px;
+// 			padding-right: 30px;
+// 			min-width: 100px;
+// 		}
+// 	}
+// }
 
-.menu-item-list {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	&-wrapper {
-		border: 3px solid orange;
-	}
-}
+// .menu-item-list {
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: center;
+// 	&-wrapper {
+// 		border: 3px solid orange;
+// 	}
+// }
 
 .box {
 	padding: 20px;
@@ -67,25 +67,66 @@ body {
 	flex-wrap: wrap;
 }
 
-.slide {
-	max-width: 100px;
+// .slide {
+// 	max-width: 100px;
+// }
+
+// .slick {
+// 	&-list {
+// 		overflow-x: scroll;
+// 	}
+// 	&-slide {
+// 		border: 3px solid blue;
+// 	}
+// 	&-track {
+// 		display: flex;
+// 		width: 100% !important;
+// 	}
+// 	&-prev,
+// 	&-next {
+// 		&::before {
+// 			content: none;
+// 		}
+// 	}
+// }
+
+// dev styles
+
+.dev-border-1-red,
+.dev-border-2-orange,
+.dev-border-3-yellow,
+.dev-border-4-green,
+.dev-border-5-blue,
+.dev-border-6-pink,
+.dev-border-7-purple,
+.dev-border-8-brown {
+	border: 3px solid red;
 }
 
-.slick {
-	&-list {
-		overflow-x: scroll;
-	}
-	&-slide {
-		border: 3px solid blue;
-	}
-	&-track {
-		display: flex;
-		width: 100% !important;
-	}
-	&-prev,
-	&-next {
-		&::before {
-			content: none;
-		}
-	}
+.dev-border-2-orange {
+	border-color: orange;
+}
+
+.dev-border-3-yellow {
+	border-color: yellow;
+}
+
+.dev-border-4-green {
+	border-color: green;
+}
+
+.dev-border-5-blue {
+	border-color: blue;
+}
+
+.dev-border-6-pink {
+	border-color: pink;
+}
+
+.dev-border-7-purple {
+	border-color: purple;
+}
+
+.dev-border-8-brown {
+	border-color: brown;
 }
