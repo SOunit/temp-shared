@@ -20,6 +20,29 @@
 
 			// active slider after angular js render for slick to work correctly
 			$scope.activateSlider(dbCategories);
+
+			$scope.addClickEventToNavItems();
+		};
+
+		$scope.addClickEventToNavItems = function () {
+			var navItems = document.querySelectorAll(".js-nav-item");
+			console.log({ navItems });
+
+			// Loop through the elements and add a click event handler to each
+			navItems.forEach(function (navItem) {
+				navItem.addEventListener("click", function () {
+					// Your click event handler code here
+					var index = navItem.getAttribute("data-menu-item-index");
+					console.log("Element clicked: " + index);
+
+					var slider = $(".slick-slider");
+					slider.slick("slickGoTo", index);
+				});
+			});
+		};
+
+		$scope.test = function () {
+			console.log("test");
 		};
 
 		$scope.activateSlider = function (menuItems) {
@@ -28,13 +51,7 @@
 
 			// append child
 			menuItems.forEach((menuItem, index) => {
-				if (index == 0) {
-					menuItem.isActive = true;
-				}
-
-				var slide = `<li class="slide nav-item ${
-					menuItem.isActive ? "nav-item--active" : ""
-				}">
+				var slide = `<li class="slide nav-item js-nav-item" data-menu-item-index="${index}">
 					<a href="#menuItem${menuItem.id}">${menuItem.name}</a>
 				</li>`;
 
@@ -53,7 +70,7 @@
 
 			// works fine but without center
 			var config2 = {
-				dots: true,
+				dots: false,
 				infinite: true,
 
 				// add this when item size is changed

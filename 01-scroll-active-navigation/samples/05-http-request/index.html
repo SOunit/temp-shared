@@ -49,7 +49,9 @@
 			<!-- menu items -->
 			<div class="menu-item-list">
 				<div ng-repeat="menuItem in menuItems">
-					<h1 id="menuItem{{ menuItem.id }}">{{menuItem.name}}</h1>
+					<h1 id="menuItem{{ menuItem.id }}" ng-click="test()">
+						{{menuItem.name}}
+					</h1>
 					<!-- product list -->
 					<div class="product-list">
 						<div ng-repeat="product in menuItem.products" class="box">
