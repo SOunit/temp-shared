@@ -41,7 +41,10 @@
 				<div class="dev-border-3-yellow menu-item">your content7</div>
 				<div class="dev-border-3-yellow menu-item">your content8</div>
 				<div class="dev-border-3-yellow menu-item">your content9</div>
-				<div class="dev-border-3-yellow menu-item">your content10</div>
+				<div class="dev-border-3-yellow menu-item">your content11</div>
+				<div class="dev-border-3-yellow menu-item">your content12</div>
+				<div class="dev-border-3-yellow menu-item">your content13</div>
+				<div class="dev-border-3-yellow menu-item">your content14</div>
 			</div>
 		</div>
 
@@ -133,12 +136,26 @@
 							infinite: true,
 							speed: 300,
 							slidesToShow: 1,
-							centerMode: true,
+							centerMode: false,
 							variableWidth: true,
 						};
 
+						var config3 = {
+							dots: true,
+							infinite: true,
+
+							// add this when item size is changed
+							variableWidth: true,
+
+							speed: 300,
+							prevArrow:
+								'<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+							nextArrow:
+								'<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+						};
+
 						// Initialize the Slick slider
-						slider.slick(config2);
+						slider.slick(config3);
 
 						// to avoid show menu broken style before controlled by slick
 						var menuContainer = document.querySelector(".hidden");

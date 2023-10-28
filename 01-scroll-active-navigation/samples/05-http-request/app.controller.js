@@ -41,6 +41,7 @@
 				slider.append(slide);
 			});
 
+			// center config from docs
 			var config1 = {
 				dots: true,
 				infinite: true,
@@ -50,13 +51,10 @@
 				variableWidth: true,
 			};
 
+			// works fine but without center
 			var config2 = {
 				dots: true,
 				infinite: true,
-
-				// center
-				centerMode: true,
-				slidesToShow: 1,
 
 				// add this when item size is changed
 				variableWidth: true,
@@ -69,7 +67,7 @@
 			};
 
 			// render slider
-			$(slider).slick(config1);
+			$(slider).slick(config2);
 		};
 	}
 })();
