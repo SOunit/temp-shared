@@ -1,9 +1,0 @@
-.nav-wrapper {
-  border: 3px solid blue;
-  position: sticky;
-  top: 0;
-  padding: 0 30px;
-}
-.nav-wrapper ul {
-  padding-left: 0;
-}
