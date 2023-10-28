@@ -1,10 +1,9 @@
-@import "_slick-custom.scss";
-@import "_nav.scss";
+@import "reset";
+@import "smooth-scroll";
+@import "slick-custom";
+@import "nav";
 
 // reset css
-html {
-	scroll-behavior: smooth;
-}
 
 body {
 	margin: 0;
@@ -31,6 +30,14 @@ body {
 	border: 3px solid blue;
 	width: 50%;
 	box-sizing: border-box;
+}
+
+.hero-box {
+	width: 100%;
+	height: 30vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .product-list {
