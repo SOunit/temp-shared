@@ -23,11 +23,8 @@
 		};
 
 		$scope.activateSlider = function (menuItems) {
-			console.log("$scope.activateSlider");
-
 			// fetch target tag
 			var slider = $(".slick-slider");
-			console.log({ slider, menuItems });
 
 			// append child
 			menuItems.forEach((menuItem) => {

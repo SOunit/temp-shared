@@ -24,16 +24,24 @@
 		/>
 
 		<!-- style -->
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="less/style.css" />
 	</head>
 	<body ng-app="app" ng-controller="appController" ng-init="init()">
 		<!-- http request / angular sample -->
 		<div class="layout">
-			<nav class="nav">
-				<ul class="slick-slider">
-					<!-- append items to slider object in AngularJS -->
-				</ul>
-			</nav>
+			<div class="nav-wrapper">
+				<!-- WARNING START: avoid or check style changes carefully, 
+					here is connected to slick library strongly. 
+					style changes could lead to broken functions here. -->
+				<nav class="nav dev-border-2-orange">
+					<ul class="slick-slider">
+						<!-- append items to slider object in AngularJS -->
+					</ul>
+				</nav>
+				<!-- WARNING END: avoid or check style changes carefully, 
+					here is connected to slick library strongly. 
+					style changes could lead to broken functions here. -->
+			</div>
 
 			<!-- menu items -->
 			<div class="menu-item-list">
