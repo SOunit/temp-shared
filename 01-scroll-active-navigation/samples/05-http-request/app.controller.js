@@ -22,6 +22,28 @@
 			$scope.activateSlider(dbCategories);
 
 			$scope.addClickEventToNavItems();
+			$scope.addClickEventToArrows();
+		};
+
+		$scope.addClickEventToArrows = function () {
+			var arrows = document.querySelectorAll(".slick-arrow");
+			console.log({ arrows });
+
+			arrows.forEach(function (arrow) {
+				arrow.addEventListener("click", function () {
+					var slider = $(".slick-slider");
+					var currentSlideIndex = slider.slick("slickCurrentSlide");
+
+					var targetNavItem = document.querySelector(
+						`.js-nav-item-${currentSlideIndex}`
+					);
+
+					console.log({ currentSlideIndex, targetNavItem });
+
+					// click nav to scroll to the target section
+					targetNavItem.click();
+				});
+			});
 		};
 
 		$scope.addClickEventToNavItems = function () {
@@ -52,13 +74,13 @@
 			// append child
 			menuItems.forEach((menuItem, index) => {
 				var slide = `<li class="slide nav-item js-nav-item" data-menu-item-index="${index}">
-					<a href="#menuItem${menuItem.id}">${menuItem.name}</a>
+					<a href="#menuItem${menuItem.id}" class="js-nav-item-${index}">${menuItem.name}</a>
 				</li>`;
 
 				slider.append(slide);
 			});
 
-			// center config from docs
+			// center config from docs, left space is empty
 			var config1 = {
 				dots: true,
 				infinite: true,
