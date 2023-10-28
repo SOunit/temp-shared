@@ -9,10 +9,18 @@ body {
 	background-color: pink;
 	box-sizing: border-box;
 	border: 3px solid green;
-	width: 1152px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+}
+
+.layout {
+	width: 1152px;
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
 }
 
 .nav {
@@ -35,6 +43,9 @@ body {
 }
 
 .menu-item-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	&-wrapper {
 		border: 3px solid orange;
 	}
@@ -54,4 +65,27 @@ body {
 	display: flex;
 	width: 100%;
 	flex-wrap: wrap;
+}
+
+.slide {
+	max-width: 100px;
+}
+
+.slick {
+	&-list {
+		overflow-x: scroll;
+	}
+	&-slide {
+		border: 3px solid blue;
+	}
+	&-track {
+		display: flex;
+		width: 100% !important;
+	}
+	&-prev,
+	&-next {
+		&::before {
+			content: none;
+		}
+	}
 }
