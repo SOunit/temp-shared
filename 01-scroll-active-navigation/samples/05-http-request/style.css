@@ -35,7 +35,8 @@ body {
   flex-wrap: wrap;
 }
 .slide {
-  max-width: 100px;
+  max-width: 150px;
+  margin-right: 30px;
 }
 .dev-border-1-red,
 .dev-border-2-orange,

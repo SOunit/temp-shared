@@ -18,7 +18,7 @@
 			// render http request result
 			$scope.$applyAsync();
 
-			// timeout to active slider after angular js render
+			// active slider after angular js render for slick to work correctly
 			$scope.activateSlider(dbCategories);
 		};
 
@@ -40,7 +40,7 @@
 
 			// render slider
 			$(slider).slick({
-				dots: true,
+				// dots: true,
 				infinite: true,
 
 				// add this when item size is changed
