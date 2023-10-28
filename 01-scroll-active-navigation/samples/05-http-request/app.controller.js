@@ -18,6 +18,7 @@
 			// render http request result
 			$scope.$applyAsync();
 
+			// timeout to active slider after angular js render
 			$scope.activateSlider(dbCategories);
 		};
 
@@ -41,6 +42,10 @@
 			$(slider).slick({
 				dots: true,
 				infinite: true,
+
+				// add this when item size is changed
+				variableWidth: true,
+
 				speed: 300,
 				prevArrow:
 					'<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
