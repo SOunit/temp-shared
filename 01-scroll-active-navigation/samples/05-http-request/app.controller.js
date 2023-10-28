@@ -27,8 +27,14 @@
 			var slider = $(".slick-slider");
 
 			// append child
-			menuItems.forEach((menuItem) => {
-				var slide = `<li class="slide">
+			menuItems.forEach((menuItem, index) => {
+				if (index == 0) {
+					menuItem.isActive = true;
+				}
+
+				var slide = `<li class="slide nav-item ${
+					menuItem.isActive ? "nav-item--active" : ""
+				}">
 					<a href="#menuItem${menuItem.id}">${menuItem.name}</a>
 				</li>`;
 
@@ -37,7 +43,7 @@
 
 			// render slider
 			$(slider).slick({
-				// dots: true,
+				dots: true,
 				infinite: true,
 
 				// add this when item size is changed

@@ -7,6 +7,18 @@ html {
   scroll-padding-top: 60px;
 }
 
+.slide {
+  padding: 10px 20px;
+  background-color: green;
+}
+
+.slick-active {
+  background-color: #333;
+}
+.slick-active a {
+  color: #fff;
+}
+
 .nav-wrapper {
   border: 3px solid blue;
   position: sticky;
@@ -15,6 +27,14 @@ html {
 }
 .nav-wrapper ul {
   padding-left: 0;
+}
+
+.nav {
+  background-color: #fff;
+}
+.nav a {
+  text-decoration: none;
+  color: #333;
 }
 
 body {
