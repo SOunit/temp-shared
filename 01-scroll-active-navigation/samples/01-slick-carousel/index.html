@@ -30,13 +30,18 @@
 		<!-- slider menu -->
 		<div class="dev-border-2-orange menu-container hidden">
 			<div class="slick-slider dev-border-1-red">
-				<!-- <div class="dev-border-3-yellow menu-item">
-          your content1 your content1 your content1
-        </div>
-        <div class="dev-border-3-yellow menu-item">your content2</div> -->
-				<!-- <div class="dev-border-3-yellow">your content3</div>
-        <div class="dev-border-3-yellow">your content4</div>
-        <div class="dev-border-3-yellow">your content5</div> -->
+				<div class="dev-border-3-yellow menu-item">
+					your content1 your content1 your content1
+				</div>
+				<div class="dev-border-3-yellow menu-item">your content2</div>
+				<div class="dev-border-3-yellow menu-item">your content3</div>
+				<div class="dev-border-3-yellow menu-item">your content4</div>
+				<div class="dev-border-3-yellow menu-item">your content5</div>
+				<div class="dev-border-3-yellow menu-item">your content6</div>
+				<div class="dev-border-3-yellow menu-item">your content7</div>
+				<div class="dev-border-3-yellow menu-item">your content8</div>
+				<div class="dev-border-3-yellow menu-item">your content9</div>
+				<div class="dev-border-3-yellow menu-item">your content10</div>
 			</div>
 		</div>
 
@@ -86,12 +91,12 @@
 						const slider = $(".slick-slider");
 
 						// Iterate through the data and create a slide for each item
-						data.forEach(function (item, index) {
-							const slide = `<div class="slide dev-border-3-yellow">
-                <p>${index}.${item.title}</p>
-            </div>`;
-							slider.append(slide);
-						});
+						// 			data.forEach(function (item, index) {
+						// 				const slide = `<div class="slide dev-border-3-yellow">
+						//     <p>${index}.${item.title}</p>
+						// </div>`;
+						// 				slider.append(slide);
+						// 			});
 
 						var noInfiniteButStartFrom0 = {
 							infinite: false,
@@ -105,8 +110,7 @@
 							initialSlide: 0,
 						};
 
-						// Initialize the Slick slider
-						slider.slick({
+						var config1 = {
 							// for click
 							// slickGoTo, https://kenwheeler.github.io/slick/
 							dots: true,
@@ -122,7 +126,19 @@
 								'<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>', // Use Font Awesome for the previous arrow
 							nextArrow:
 								'<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>', // Use Font Awesome for the next arrow
-						});
+						};
+
+						var config2 = {
+							dots: true,
+							infinite: true,
+							speed: 300,
+							slidesToShow: 1,
+							centerMode: true,
+							variableWidth: true,
+						};
+
+						// Initialize the Slick slider
+						slider.slick(config2);
 
 						// to avoid show menu broken style before controlled by slick
 						var menuContainer = document.querySelector(".hidden");

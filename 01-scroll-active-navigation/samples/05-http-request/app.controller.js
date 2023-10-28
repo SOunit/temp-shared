@@ -41,13 +41,22 @@
 				slider.append(slide);
 			});
 
-			// render slider
-			$(slider).slick({
+			var config1 = {
+				dots: true,
+				infinite: true,
+				speed: 300,
+				slidesToShow: 1,
+				centerMode: true,
+				variableWidth: true,
+			};
+
+			var config2 = {
 				dots: true,
 				infinite: true,
 
 				// center
-				// centerMode: true,
+				centerMode: true,
+				slidesToShow: 1,
 
 				// add this when item size is changed
 				variableWidth: true,
@@ -57,7 +66,10 @@
 					'<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
 				nextArrow:
 					'<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
-			});
+			};
+
+			// render slider
+			$(slider).slick(config1);
 		};
 	}
 })();
