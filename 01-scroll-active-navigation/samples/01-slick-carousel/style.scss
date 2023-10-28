@@ -1,0 +1,106 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: pink;
+}
+
+.menu-container {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 0 20px;
+}
+
+.slick-slider {
+	width: 100%;
+}
+
+// slide
+.slide,
+.menu-item {
+	margin-right: 30px;
+	max-width: 150px;
+	p {
+		margin: 0;
+	}
+}
+
+// hide before js runs
+.hidden {
+	display: none;
+}
+
+// hide default arrows
+.slick-prev,
+.slick-next {
+	&::before {
+		// content: none;
+	}
+}
+
+.fas {
+	&::before {
+		font-size: 16px;
+		color: green;
+	}
+}
+
+// pc
+@media (min-width: 680px) {
+	body {
+		background-color: aquamarine;
+	}
+}
+
+.sample-section {
+	min-height: 800px;
+	&--first {
+		$header-height: 110.5px;
+		margin-top: $header-height;
+	}
+}
+
+// dev styles
+
+.dev-border-1-red,
+.dev-border-2-orange,
+.dev-border-3-yellow,
+.dev-border-4-green,
+.dev-border-5-blue,
+.dev-border-6-pink,
+.dev-border-7-purple,
+.dev-border-8-brown {
+	border: 3px solid red;
+}
+
+.dev-border-2-orange {
+	border-color: orange;
+}
+
+.dev-border-3-yellow {
+	border-color: yellow;
+}
+
+.dev-border-4-green {
+	border-color: green;
+}
+
+.dev-border-5-blue {
+	border-color: blue;
+}
+
+.dev-border-6-pink {
+	border-color: pink;
+}
+
+.dev-border-7-purple {
+	border-color: purple;
+}
+
+.dev-border-8-brown {
+	border-color: brown;
+}

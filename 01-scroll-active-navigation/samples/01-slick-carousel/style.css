@@ -1,15 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   background-color: pink;
 }
+
 .menu-container {
-  display: flex;
-  justify-content: center;
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
+  padding: 0 20px;
 }
+
+.slick-slider {
+  width: 100%;
+}
+
 .slide,
 .menu-item {
   margin-right: 30px;
@@ -19,26 +28,19 @@ body {
 .menu-item p {
   margin: 0;
 }
-.slick-slider {
-  width: 85%;
-}
+
 .hidden {
   display: none;
 }
-.slick-prev::before,
-.slick-next::before {
-  content: none;
-}
+
 .fas::before {
   font-size: 16px;
   color: green;
 }
+
 @media (min-width: 680px) {
   body {
     background-color: aquamarine;
-  }
-  .slick-slider {
-    width: 95%;
   }
 }
 .sample-section {
@@ -47,34 +49,42 @@ body {
 .sample-section--first {
   margin-top: 110.5px;
 }
+
 .dev-border-1-red,
 .dev-border-2-orange,
 .dev-border-3-yellow,
 .dev-border-4-green,
 .dev-border-5-blue,
 .dev-border-6-pink,
-dev-border-7-purple,
-dev-border-8-brown {
+.dev-border-7-purple,
+.dev-border-8-brown {
   border: 3px solid red;
 }
+
 .dev-border-2-orange {
   border-color: orange;
 }
+
 .dev-border-3-yellow {
   border-color: yellow;
 }
+
 .dev-border-4-green {
   border-color: green;
 }
+
 .dev-border-5-blue {
   border-color: blue;
 }
+
 .dev-border-6-pink {
   border-color: pink;
 }
+
 .dev-border-7-purple {
   border-color: purple;
 }
+
 .dev-border-8-brown {
   border-color: brown;
-}
+}/*# sourceMappingURL=style.css.map */
