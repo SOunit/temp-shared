@@ -1,100 +1,112 @@
 (function () {
-  "use strict";
+	"use strict";
 
-  angular.module("app", []);
+	angular.module("app", []);
 
-  angular.module("app").controller("appController", appController);
+	angular.module("app").controller("appController", appController);
 
-  appController.$inject = ["$scope"];
-  function appController($scope) {
-    $scope.init = function () {
-      // FIXME: replace to http request
-      $scope.menuItems = [
-        {
-          id: 1,
-          name: "menu 1",
-          products: [
-            { id: 1, menuId: 1, name: "item 11" },
-            { id: 2, menuId: 1, name: "item 12" },
-            { id: 3, menuId: 1, name: "item 13" },
-            { id: 4, menuId: 1, name: "item 14" },
-            { id: 5, menuId: 1, name: "item 15" },
-            { id: 6, menuId: 1, name: "item 16" },
-            { id: 7, menuId: 1, name: "item 17" },
-            { id: 8, menuId: 1, name: "item 18" },
-          ],
-        },
-        {
-          id: 2,
-          name: "menu 2",
-          products: [
-            { id: 9, menuId: 2, name: "item 21" },
-            { id: 10, menuId: 2, name: "item 22" },
-            { id: 11, menuId: 2, name: "item 23" },
-            { id: 12, menuId: 2, name: "item 24" },
-            { id: 13, menuId: 2, name: "item 25" },
-            { id: 14, menuId: 2, name: "item 26" },
-            { id: 15, menuId: 2, name: "item 27" },
-            { id: 16, menuId: 2, name: "item 28" },
-          ],
-        },
-        {
-          id: 3,
-          name: "menu 3",
-          products: [
-            { id: 17, menuId: 3, name: "item 31" },
-            { id: 18, menuId: 3, name: "item 32" },
-            { id: 19, menuId: 3, name: "item 33" },
-            { id: 20, menuId: 3, name: "item 34" },
-            { id: 21, menuId: 3, name: "item 35" },
-            { id: 22, menuId: 3, name: "item 36" },
-            { id: 23, menuId: 3, name: "item 37" },
-            { id: 24, menuId: 3, name: "item 38" },
-          ],
-        },
-        {
-          id: 4,
-          name: "menu 4",
-          products: [
-            { id: 25, menuId: 4, name: "item 41" },
-            { id: 26, menuId: 4, name: "item 42" },
-            { id: 27, menuId: 4, name: "item 43" },
-            { id: 28, menuId: 4, name: "item 44" },
-            { id: 29, menuId: 4, name: "item 45" },
-            { id: 30, menuId: 4, name: "item 46" },
-            { id: 31, menuId: 4, name: "item 47" },
-            { id: 32, menuId: 4, name: "item 48" },
-          ],
-        },
-        {
-          id: 5,
-          name: "menu 5",
-          products: [
-            { id: 33, menuId: 5, name: "item 51" },
-            { id: 34, menuId: 5, name: "item 52" },
-            { id: 35, menuId: 5, name: "item 53" },
-            { id: 36, menuId: 5, name: "item 54" },
-            { id: 37, menuId: 5, name: "item 55" },
-            { id: 38, menuId: 5, name: "item 56" },
-            { id: 39, menuId: 5, name: "item 57" },
-            { id: 40, menuId: 5, name: "item 58" },
-          ],
-        },
-        {
-          id: 6,
-          name: "menu 6",
-          products: [
-            { id: 41, menuId: 6, name: "item 61" },
-            { id: 42, menuId: 6, name: "item 62" },
-            { id: 43, menuId: 6, name: "item 63" },
-            { id: 44, menuId: 6, name: "item 64" },
-            { id: 45, menuId: 6, name: "item 65" },
-            { id: 46, menuId: 6, name: "item 66" },
-            { id: 47, menuId: 6, name: "item 67" },
-            { id: 48, menuId: 6, name: "item 68" },
-          ],
-        },
-      ];
-    };
-  }
+	appController.$inject = ["$scope", "$http"];
+	function appController($scope, $http) {
+		$scope.init = async function () {
+			var url = "./data.json";
+			var res = await $http({ url });
+
+			var dbCategories = res.data;
+
+			$scope.menuItems = dbCategories;
+
+			// render http request result
+			$scope.$applyAsync();
+
+			// active slider after angular js render for slick to work correctly
+			$scope.activateSlider(dbCategories);
+
+			$scope.addClickEventToNavItems();
+			$scope.addClickEventToArrows();
+		};
+
+		$scope.addClickEventToArrows = function () {
+			var arrows = document.querySelectorAll(".slick-arrow");
+			console.log({ arrows });
+
+			arrows.forEach(function (arrow) {
+				arrow.addEventListener("click", function () {
+					var slider = $(".slick-slider");
+					var currentSlideIndex = slider.slick("slickCurrentSlide");
+
+					var targetNavItem = document.querySelector(
+						`.js-nav-item-${currentSlideIndex}`
+					);
+
+					console.log({ currentSlideIndex, targetNavItem });
+
+					// click nav to scroll to the target section
+					targetNavItem.click();
+				});
+			});
+		};
+
+		$scope.addClickEventToNavItems = function () {
+			var navItems = document.querySelectorAll(".js-nav-item");
+			console.log({ navItems });
+
+			// Loop through the elements and add a click event handler to each
+			navItems.forEach(function (navItem) {
+				navItem.addEventListener("click", function () {
+					// Your click event handler code here
+					var index = navItem.getAttribute("data-menu-item-index");
+					console.log("Element clicked: " + index);
+
+					var slider = $(".slick-slider");
+					slider.slick("slickGoTo", index);
+				});
+			});
+		};
+
+		$scope.test = function () {
+			console.log("test");
+		};
+
+		$scope.activateSlider = function (menuItems) {
+			// fetch target tag
+			var slider = $(".slick-slider");
+
+			// append child
+			menuItems.forEach((menuItem, index) => {
+				var slide = `<li class="slide nav-item js-nav-item" data-menu-item-index="${index}">
+					<a href="#menuItem${menuItem.id}" class="js-nav-item-${index}">${menuItem.name}</a>
+				</li>`;
+
+				slider.append(slide);
+			});
+
+			// center config from docs, left space is empty
+			var config1 = {
+				dots: true,
+				infinite: true,
+				speed: 300,
+				slidesToShow: 1,
+				centerMode: true,
+				variableWidth: true,
+			};
+
+			// works fine but without center
+			var config2 = {
+				dots: false,
+				infinite: true,
+
+				// add this when item size is changed
+				variableWidth: true,
+
+				speed: 300,
+				prevArrow:
+					'<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+				nextArrow:
+					'<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+			};
+
+			// render slider
+			$(slider).slick(config2);
+		};
+	}
 })();
