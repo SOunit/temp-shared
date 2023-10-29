@@ -1,0 +1,15 @@
+// styles for nav = slick wrapper
+.nav-wrapper {
+	border: 3px solid blue;
+	position: sticky;
+	top: 0;
+	padding: 0 30px;
+
+	ul {
+		padding-left: 0;
+	}
+}
+
+.nav {
+	background-color: #fff;
+}
