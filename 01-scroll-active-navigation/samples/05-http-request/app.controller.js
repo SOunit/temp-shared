@@ -19,13 +19,13 @@
 			$scope.$applyAsync();
 
 			// active slider after angular js render for slick to work correctly
-			$scope.activateSlider(dbCategories);
+			$scope._activateSlider(dbCategories);
 
-			$scope.addClickEventToNavItems();
-			$scope.addClickEventToArrows();
+			$scope._addClickEventToNavItems();
+			$scope._addClickEventToArrows();
 		};
 
-		$scope.addClickEventToArrows = function () {
+		$scope._addClickEventToArrows = function () {
 			var arrows = document.querySelectorAll(".slick-arrow");
 			console.log({ arrows });
 
@@ -46,7 +46,7 @@
 			});
 		};
 
-		$scope.addClickEventToNavItems = function () {
+		$scope._addClickEventToNavItems = function () {
 			var navItems = document.querySelectorAll(".js-nav-item");
 			console.log({ navItems });
 
@@ -67,7 +67,7 @@
 			console.log("test");
 		};
 
-		$scope.activateSlider = function (menuItems) {
+		$scope._activateSlider = function (menuItems) {
 			// fetch target tag
 			var slider = $(".slick-slider");
 
