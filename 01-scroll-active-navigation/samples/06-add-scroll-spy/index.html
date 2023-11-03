@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<!-- slick styles -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+		/>
+
+		<!-- font awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		/>
+
+		<!-- style -->
+		<link rel="stylesheet" href="scss/style.css" />
+	</head>
+	<body ng-app="app" ng-controller="appController" ng-init="init()">
+		<!-- http request / angular sample -->
+		<div class="layout">
+			<div class="box hero-box">sample image</div>
+
+			<!-- nav -->
+			<div class="nav-wrapper">
+				<!-- WARNING START: avoid or check style changes carefully, 
+					here is connected to slick library strongly. 
+					style changes could lead to broken functions here. -->
+				<nav class="nav dev-border-2-orange">
+					<ul class="slick-slider">
+						<!-- append items to slider object in AngularJS -->
+					</ul>
+				</nav>
+				<!-- WARNING END: avoid or check style changes carefully, 
+					here is connected to slick library strongly. 
+					style changes could lead to broken functions here. -->
+			</div>
+
+			<!-- menu items -->
+			<div class="menu-item-list">
+				<div ng-repeat="menuItem in menuItems">
+					<h1 id="menuItem{{ menuItem.id }}" ng-click="test()">
+						{{menuItem.name}}
+					</h1>
+					<!-- product list -->
+					<div class="product-list">
+						<div ng-repeat="product in menuItem.products" class="box">
+							<p>{{product.id}}. {{product.name}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- angular js lib -->
+		<script src="https://code.angularjs.org/1.8.2/angular.js"></script>
+		<script src="https://code.angularjs.org/1.8.2/angular-animate.js"></script>
+
+		<!-- controller -->
+		<script src="./app.controller.js"></script>
+
+		<!-- slick script -->
+		<script
+			type="text/javascript"
+			src="//code.jquery.com/jquery-1.11.0.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+		></script>
+	</body>
+</html>
