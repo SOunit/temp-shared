@@ -23,6 +23,34 @@
 
 			$scope._addClickEventToNavItems();
 			$scope._addClickEventToArrows();
+
+			$scope._addScrollSpy();
+		};
+
+		$scope._addScrollSpy = function () {
+			$(document).ready(function () {
+				$scope.menuItems.forEach((menuItem, index) => {
+					console.log("$scope._addScrollSpy", { menuItem });
+					var menuItemId = menuItem.id;
+	
+					var prefix = "#menuItem";
+					var startQueryKey = `${prefix}${menuItemId}`;
+					var startTargetTag = $(startQueryKey);
+	
+					console.log({prefix, startQueryKey, startTargetTag});
+	
+					startTargetTag.waypoint({
+						handler: function (direction) {
+							console.log(`menuItem ${menuItemId}: ${menuItem.name} start`);
+							if (direction === "down" || direction === "up") {
+								var slider = $(".slick-slider");
+								slider.slick("slickGoTo", index);
+							}
+						},
+						offset: "0",
+					});
+				});				
+			})
 		};
 
 		$scope._addClickEventToArrows = function () {
