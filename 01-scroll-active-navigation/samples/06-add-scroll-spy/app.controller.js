@@ -18,6 +18,10 @@
 			// render http request result
 			await $scope.$applyAsync();
 
+			// to handle scroll spy
+			// while click and scroll, scroll spy is not needed
+			$scope.isInScrollByClick = false;
+
 			// active slider after angular js render for slick to work correctly
 			$scope._activateSlider(dbCategories);
 
@@ -63,6 +67,9 @@
 
 			arrows.forEach(function (arrow) {
 				arrow.addEventListener("click", function () {
+					// stop scroll spy
+					$scope.isInScrollByClick = true;
+					
 					var slider = $(".slick-slider");
 					var currentSlideIndex = slider.slick("slickCurrentSlide");
 
@@ -74,6 +81,9 @@
 
 					// click nav to scroll to the target section
 					targetNavItem.click();
+
+					// start scroll spy after scroll
+					_cancelIsInScrollByClick();
 				});
 			});
 		};
@@ -85,15 +95,28 @@
 			// Loop through the elements and add a click event handler to each
 			navItems.forEach(function (navItem) {
 				navItem.addEventListener("click", function () {
+					// stop scroll spy
+					$scope.isInScrollByClick = true;
+
 					// Your click event handler code here
 					var index = navItem.getAttribute("data-menu-item-index");
 					console.log("Element clicked: " + index);
 
 					var slider = $(".slick-slider");
 					slider.slick("slickGoTo", index);
+
+					// activate scroll spy after scroll
+					$scope._cancelIsInScrollByClick();
 				});
 			});
 		};
+
+		$scope._cancelIsInScrollByClick = function () {
+            var scrollDuration = 1000;
+            setTimeout(function () {
+                $scope.isInScrollByClick = false;
+            }, scrollDuration);
+        }
 
 		$scope.test = function () {
 			console.log("test");
