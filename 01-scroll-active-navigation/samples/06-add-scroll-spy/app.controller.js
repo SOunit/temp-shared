@@ -38,27 +38,38 @@
 				$scope.menuItems.forEach((menuItem, index) => {
 					console.log("$scope._addScrollSpy", { menuItem });
 					var menuItemId = menuItem.id;
-	
+
 					var prefix = "#menuItem";
 					var startQueryKey = `${prefix}${menuItemId}`;
 					var startTargetTag = $(startQueryKey);
 					var menuItemName = menuItem.name;
-					console.log({prefix, startQueryKey, startTargetTag});
-	
+					console.log({ prefix, startQueryKey, startTargetTag });
+
 					startTargetTag.waypoint({
 						handler: function (direction) {
-							console.log("scroll event triggered", {menuItemName, index});
-							if (direction === "down" || direction === "up") {
+							// do nothing while stop scroll spy
+							if ($scope.isInScrollByClick) {
+								return;
+							}
+
+							console.log("scroll event triggered", { menuItemName, index });
+							if (direction === "down") {
 								var slider = $(".slick-slider");
 								slider.slick("slickGoTo", index);
+							} else {
+								// direction === "up"
+								// set previous menu active when scroll up
+								var newIndex = index > 0 ? index - 1 : 0;
+								var slider = $(".slick-slider");
+								slider.slick("slickGoTo", newIndex);
 							}
 						},
 						offset: "0",
 					});
 				});
-				
+
 				console.log("add scroll spy end==================");
-			})
+			});
 		};
 
 		$scope._addClickEventToArrows = function () {
@@ -69,7 +80,7 @@
 				arrow.addEventListener("click", function () {
 					// stop scroll spy
 					$scope.isInScrollByClick = true;
-					
+
 					var slider = $(".slick-slider");
 					var currentSlideIndex = slider.slick("slickCurrentSlide");
 
@@ -112,11 +123,11 @@
 		};
 
 		$scope._cancelIsInScrollByClick = function () {
-            var scrollDuration = 1000;
-            setTimeout(function () {
-                $scope.isInScrollByClick = false;
-            }, scrollDuration);
-        }
+			var scrollDuration = 1000;
+			setTimeout(function () {
+				$scope.isInScrollByClick = false;
+			}, scrollDuration);
+		};
 
 		$scope.test = function () {
 			console.log("test");
@@ -129,7 +140,7 @@
 			// append child
 			menuItems.forEach((menuItem, index) => {
 				var slide = `<li class="slide nav-item js-nav-item" data-menu-item-index="${index}">
-					<a href="#menuItem${menuItem.id}" class="js-nav-item-${index}">${menuItem.name}</a>
+					<a href="#menuItem${menuItem.id}" class="js-nav-item-${index}">${index}. ${menuItem.name}</a>
 				</li>`;
 
 				slider.append(slide);

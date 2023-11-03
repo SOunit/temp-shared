@@ -56,7 +56,7 @@
 			<div class="menu-item-list">
 				<div ng-repeat="menuItem in menuItems">
 					<h1 id="menuItem{{ menuItem.id }}" ng-click="test()">
-						{{menuItem.name}}
+						{{$index}}. {{menuItem.name}}
 					</h1>
 					<!-- product list -->
 					<div class="product-list">
