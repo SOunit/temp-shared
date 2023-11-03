@@ -29,6 +29,8 @@
 
 		$scope._addScrollSpy = function () {
 			$(document).ready(function () {
+				console.log("add scroll spy start==================");
+
 				$scope.menuItems.forEach((menuItem, index) => {
 					console.log("$scope._addScrollSpy", { menuItem });
 					var menuItemId = menuItem.id;
@@ -36,12 +38,12 @@
 					var prefix = "#menuItem";
 					var startQueryKey = `${prefix}${menuItemId}`;
 					var startTargetTag = $(startQueryKey);
-	
+					var menuItemName = menuItem.name;
 					console.log({prefix, startQueryKey, startTargetTag});
 	
 					startTargetTag.waypoint({
 						handler: function (direction) {
-							console.log(`menuItem ${menuItemId}: ${menuItem.name} start`);
+							console.log("scroll event triggered", {menuItemName, index});
 							if (direction === "down" || direction === "up") {
 								var slider = $(".slick-slider");
 								slider.slick("slickGoTo", index);
@@ -49,7 +51,9 @@
 						},
 						offset: "0",
 					});
-				});				
+				});
+				
+				console.log("add scroll spy end==================");
 			})
 		};
 
