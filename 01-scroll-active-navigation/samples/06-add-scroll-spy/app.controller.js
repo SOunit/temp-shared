@@ -16,7 +16,7 @@
 			$scope.menuItems = dbCategories;
 
 			// render http request result
-			$scope.$applyAsync();
+			await $scope.$applyAsync();
 
 			// active slider after angular js render for slick to work correctly
 			$scope._activateSlider(dbCategories);
